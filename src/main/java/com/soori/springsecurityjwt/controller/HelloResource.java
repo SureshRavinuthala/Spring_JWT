@@ -1,5 +1,6 @@
 package com.soori.springsecurityjwt.controller;
 
+import com.soori.springsecurityjwt.util.JwtGeneration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -28,6 +29,9 @@ public class HelloResource {
 	@Autowired
 	private JwtUtil jwtTokenUtil;
 
+	@Autowired
+	private JwtGeneration jwtTokenGen;
+
 	@RequestMapping("/hello")
 	public String hello() {
 		return "Hello Suresh Ravinuthala";
@@ -45,7 +49,9 @@ public class HelloResource {
 
 		final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticateRequest.getUsername());
 
-		final String jwt = jwtTokenUtil.generateToken(userDetails);
+		//final String jwt = jwtTokenUtil.generateToken(userDetails);
+
+		final String jwt = jwtTokenGen.createJwtSignedHMAC();
 
 		return ResponseEntity.ok(new AuthenticateResponse(jwt));
 	}
