@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "218f0865-8196-47c9-9578-b8315c8d2dcb",
+		"name": "JWT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9290796"
+	},
+	"item": [
+		{
+			"name": "authenticate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"suresh\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hello",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiU3VyZXNoIFJhdmludXRoYWxhIiwiZW1haWwiOiJzdXJlc2hAZXhhbXBsZS5jb20iLCJ1c2VybmFtZSI6InN1cmVzaCIsInN1YiI6InN1cmVzaCIsImp0aSI6IjliNzA4MzYyLTE2YjMtNGMyNC1hOTRlLTgwZThmYTU1N2UwMiIsImlhdCI6MTY1NDA5MTA2MiwiZXhwIjoxNjU0MDkxMzYyfQ.NLVZeK-0aDW23BzVf22dSzCSaQTKeZQ8oOSCeaN_Ps8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/hello",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hello"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
